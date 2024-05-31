@@ -54,7 +54,8 @@ You also need to download a backbone trained on ImageNet-1k by either:
 *  use pretrained pythorch flag and save the path.
 * download from [Google drive link].(https://drive.google.com/file/d/1nzSX8bX3zoRREn6WnoEeAPbKYPPOa-3Y/view?usp=sharing "Google drive link") (credit below)
 
-Then put the backbone models in 'pretrained/' folder
+Then put the backbone models in 'pretrained' folder.
+Backbone model selection for running is at 'configs/\<dataset\>.yaml'
 
 ## Preperation :card_index_dividers:
 
