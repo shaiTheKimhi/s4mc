@@ -41,7 +41,7 @@ git clone https://github.com/shaiTheKimhi/S4MC.git && cd s4mc
 
 mkdir pretrained
 
-conda create -n s4mc
+conda create -n s4mc python=3.6.9
 
 conda activate s4mc
 
