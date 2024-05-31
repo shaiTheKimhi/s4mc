@@ -128,8 +128,3 @@ Or when running with slurm:
 This project is released under the [Apache 2.0 ](https://github.com/Haochen-Wang409/U2PL/blob/main/LICENSE "Apache 2.0 ") license.
 
 
-
-## Acknowledgement :copyright:
-
-This repository code is heavily based on [U2PL](https://github.com/Haochen-Wang409/U2PL) as well as the link for the pre-trained model provided in here.
-
