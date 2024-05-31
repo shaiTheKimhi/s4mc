@@ -1,10 +1,10 @@
 #!/bin/bash
 
 now=$(date +"%Y%m%d_%H%M%S")
-config=configs/coco.yaml
-labeled_id_path=partitions/coco/1_128/labeled.txt
-unlabeled_id_path=partitions/coco/1_128/unlabeled.txt
-save_path=exp/coco/1_128/s4mc_dusperb_fixed
+config=configs/pascal.yaml
+labeled_id_path=partitions/pascal/1464/labeled.txt
+unlabeled_id_path=partitions/pascal/1464/unlabeled.txt
+save_path=exp/pascal/1464/s4mc
 mkdir -p $save_path
 s4mc=1
 fixmatch=0

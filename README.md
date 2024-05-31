@@ -92,16 +92,36 @@ unzip all into data with the following structure:
 For training a semi-supervised model you need to first set a config.
 We've provided an example config for PASCAL. all the splits of data are provided in the data sub-directory as well, so simply change the config with the desired parameters and dataset.
 
-To run the code distributed, go to experiments and run: 
+To run the code distributed, run the following command: 
 ```
-python -m torch.distributed.launch --nproc_per_node=<#GPUs> --nnodes=1 ../train_semi.py --config=<path_to_config> --seed <random_seed> --name <exp_name>
+python -m torch.distributed.launch --nproc_per_node=<#GPUs> --master_addr=localhost --master_port=<PORT> s4mc.py --config=<path_to_config> --labeled-id-path <labeled_id_path> --unlabeled-id-path <unlabeled_id_path> --save-path <save_path> --port <PORT> 2>&1 --s4mc <method> | tee $save_path/$now.txt
+```
+When using slurm, run 
+
+```
+srun --mpi=pmi2 -p <PORT> -n <#GPUs> --gres=gpu:<#GPUs> --ntasks-per-node=<#GPUs> --job-name=<name> \
+    python -u s4mc.py --config=<path_to_config> --labeled-id-path <labeled_id_path> --unlabeled-id-path <unlabeled_id_path> --save-path <save_path> --port <PORT> 2>&1 --s4mc <method> | tee $save_path/$now.txt
 ```
 
-where
-`<#GPUs>` is the number of cuda devices avalible for distributed training.
-`<path_to_config>` is the path to your config
-`<random_seed>` to set a random seed for reproducability
-`<exp_name>` will save the model and tensorboard with the experiment name
+Where: <br/>
+`<#GPUs>` is the number of cuda devices avalible for distributed training. <br/>
+`<PORT` is the port number for the master server. <br/>
+`<path_to_config>` is the path to your config. <br/>
+`<labeled_id_path>` is the path to the labeled partition file. <br/>
+`<unlabeled_id_path>` is the path to the unlabeled partition file. <br/>
+`<random_seed>` to set a random seed for reproducability. <br/>
+`<method>` is the method to run: 1 to run s4mc, 0 for baseline.<br/>
+`<name>` is job name for slurm run
+
+Alternatively, run prepared script:
+```
+./tools/slurm_train.sh
+```
+when running on slurm, otherwise run:
+```
+./tools/train_s4mc.sh
+```
+
 
 ## License :paperclip:
 

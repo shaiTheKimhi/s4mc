@@ -21,7 +21,7 @@ from supervised import evaluate
 from util.ohem import ProbOhemCrossEntropy2d
 from util.utils import count_params, AverageMeter, intersectionAndUnion, init_log
 from util.dist_helper import setup_distributed
-from util.s4mc_utils import get_neigbor_tensors, expected_neighbourhoods
+from util.s4mc_utils import get_neigbor_tensors, expected_neighbourhoods, set_random_seed
 
 parser = argparse.ArgumentParser(description='Semi-Supervised Semantic Segmentation')
 parser.add_argument('--config', type=str, required=True)
@@ -32,7 +32,9 @@ parser.add_argument('--local_rank', default=0, type=int)
 parser.add_argument('--port', default=None, type=int)
 parser.add_argument('--per', default=0.4, type=float)
 parser.add_argument('--s4mc', default=None, type=int)
-parser.add_argument('--fixmatch', default=None, type=int)
+parser.add_argument('--fixmatch', default=0, type=int)
+parser.add_argument('--seed', default=None, type=int)
+
 
 
 def load_model(cfg, rank, local_rank, logger, save_path=""):
@@ -74,6 +76,11 @@ def main():
     logger.propagate = 0
 
     rank, word_size = setup_distributed(port=args.port)
+
+    if(args.seed):
+        if rank == 0:
+            logger.log("set random seed to", args.seed)
+        set_random_seed(args.seed)
 
     if rank == 0:
         logger.info('{}\n'.format(pprint.pformat(cfg)))
