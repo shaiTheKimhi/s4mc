@@ -115,11 +115,11 @@ Where: <br/>
 
 Alternatively, run prepared script:
 ```
-./tools/slurm_train.sh
-```
-when running on slurm, otherwise run:
-```
 ./tools/train_s4mc.sh
+```
+Or when running with slurm:
+```
+./tools/slurm_train.sh
 ```
 
 
