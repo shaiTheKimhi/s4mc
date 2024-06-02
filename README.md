@@ -37,7 +37,7 @@ A visual example for the results:
 ## Installation :writing_hand:
 
 > 
-git clone https://github.com/shaiTheKimhi/S4MC.git && cd s4mc 
+'''git clone https://github.com/shaiTheKimhi/S4MC.git && cd s4mc '''
 
 mkdir pretrained
 
