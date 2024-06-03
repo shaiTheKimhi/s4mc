@@ -28,6 +28,16 @@ Results for PASCAL VOC 12, using additional coarse annotated:
 |S4MC + FixMatch   |73.13|74.72|77.27|79.07|79.6|
 |S4MC + UniMatch   |**74.72**| **75.21**| **79.07**| **80.12**| **81.56**|
 
+Results for COCO (* represents reproduced results):
+
+|Method |  1/512  | 1/256 | 1/128 | 1/64 | 1/32 | 
+|:--- |:---:|:---:|:---:|:---:|:---:|
+|Sup only|22.9|28.0|33.6|37.8|42.2|
+|PseudoSeg |29.8| 37.1|39.1| 41.8| 43.6|
+|PC2Seg     |29.9| 37.5|40.1| 43.7| 46.1|
+|UniMatch*   |31.9|38.9|**43.86**|47.8|49.8|
+|S4MC + UniMatch   |**32.9**| **40.4**|43.78| **47.98**| **50.58**|
+
 For all the results, please refer to the paper experiment section
 
 A visual example for the results:
