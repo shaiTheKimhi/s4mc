@@ -36,19 +36,16 @@ A visual example for the results:
 
 ## Installation :writing_hand:
 
-> 
-```git clone https://github.com/shaiTheKimhi/S4MC.git && cd s4mc ```
-
-```mkdir pretrained```
-
-```conda create -n s4mc python=3.6.9```
-
-```conda activate s4mc```
-
-```pip install -r requirements.txt```
-
-```pip install torch==1.12.1+cu113 torchvision==0.13.1+cu113 -f https://download.pytorch.org/whl/torch_stable.html```
-
+>
+>
+```
+git clone https://github.com/shaiTheKimhi/S4MC.git && cd s4mc 
+mkdir pretrained
+conda create -n s4mc python=3.6.9
+conda activate s4mc
+pip install -r requirements.txt
+pip install torch==1.12.1+cu113 torchvision==0.13.1+cu113 -f https://download.pytorch.org/whl/torch_stable.html
+```
 
 You also need to download a backbone trained on ImageNet-1k by either:
 *  use pretrained pythorch flag and save the path.
