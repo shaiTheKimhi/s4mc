@@ -2,7 +2,7 @@
 
 ![](https://github.com/s4mcontext/s4mc/blob/main/imgs/method.png?raw=true)
 
-## Description:information_source:
+## Description:information source:
 This is an official PyTorch implementation of the "Semi-Supervised Semantic Segmentation via Marginal Contextual Information" paper submission for NeurIPS 2023.
 
 The method utilize contextual information to produce higher quality and higher quantity of pseudo-labels.
